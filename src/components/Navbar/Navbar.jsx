@@ -48,7 +48,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="font-bold text-2xl">CS — Ticket System</a>
+          <a className="font-bold text-2xl text-center md:text-start w-full">CS — Ticket System</a>
         </div>
         <div className="navbar-end hidden lg:flex flex-1">
           <ul className="menu menu-horizontal font-medium">
@@ -71,11 +71,11 @@ const Navbar = () => {
               <a href="contact">Contact</a>
             </li>
           </ul>
-          <a className="btn bg-[#422AD5] text-white border-none">
-            <FaPlus />
-            New Ticket
-          </a>
         </div>
+        <a className="btn bg-[#422AD5] text-white border-none mt-5 md:mt-0">
+          <FaPlus />
+          New Ticket
+        </a>
       </div>
     </div>
   );
