@@ -6,7 +6,7 @@ const TicketCard = ({ticket, handleCustomerTicket}) => {
     const {id, title, description, customer, priority, createdAt, status} = ticket;
     
     return (
-        <div onClick={() => handleCustomerTicket(ticket)} className='cursor-pointer transition-transform duration-700 hover:scale-105 rounded-xl p-5 py-10 bg-white shadow-xl space-y-3'>
+        <div onClick={() => handleCustomerTicket(ticket)} className='cursor-pointer transition-transform duration-700 hover:scale-103 rounded-xl p-5 py-10 bg-white shadow-xl space-y-3'>
             <div className='flex items-center justify-between'>
                 <h1 className='font-semibold text-xl'>{title}</h1>
                 <div className='flex items-center justify-center gap-1 px-2 py-1 rounded-2xl bg-[#B9F8CF] text-[#02A53B]'>

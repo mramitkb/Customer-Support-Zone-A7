@@ -1,5 +1,6 @@
 import React from "react";
 import { FaPlus } from "react-icons/fa6";
+import csLogo from "../../assets/logo.png"
 
 const Navbar = () => {
   return (
@@ -48,10 +49,13 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="font-bold text-2xl text-center md:text-start w-full">CS — Ticket System</a>
+          <a className="font-bold text-2xl text-center md:text-start w-full flex items-center gap-2">
+            <img className="w-8" src={csLogo} alt="" />
+            <p>CS — Ticket System</p>
+          </a>
         </div>
         <div className="navbar-end hidden lg:flex flex-1">
-          <ul className="menu menu-horizontal font-medium">
+          <ul className="flex items-center gap-3 font-medium space-x-0 mr-5">
             <li>
               <a href="home">Home</a>
             </li>

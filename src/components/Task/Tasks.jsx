@@ -6,7 +6,7 @@ const Tasks = ({customerTicket, setCustomerTicket, handleRemoveTask}) => {
     return (
         <div className='col-span-3'>
             <h1 className='font-semibold text-xl'>Task Status</h1>
-            <div className='mt-5'>
+            <div className='mt-10'>
                 {/* <h2 className='text-[#627382] font-medium'>Select a ticket to add to Task Status</h2> */}
                 <div className='space-y-3'>
                     {

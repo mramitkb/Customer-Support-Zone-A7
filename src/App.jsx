@@ -4,6 +4,7 @@ import Banner from "./components/Banner/Banner"
 import Tickets from "./components/CustomerTickets/Tickets"
 import Tasks from "./components/Task/Tasks"
 import { Suspense, useState } from "react"
+import Footer from "./components/Footer/Footer"
 
 const fetchPromise = async() => {
     const res = await fetch("/tickets.json");
@@ -13,7 +14,7 @@ const ticketsPromise = fetchPromise();
 
 function App() {
     const [customerTicket, setCustomerTicket] = useState([]);
-    const [resolved, setResolved] = useState([])
+    const [resolved, setResolved] = useState(0)
 
     const handleCustomerTicket = (ticket) => {
         toast.info('Ticket added!', {
@@ -33,8 +34,8 @@ function App() {
 
     const handleRemoveTask = (taskTicket) => {
         const remainingTickets = customerTicket.filter(task => task.id !== taskTicket.id);
-        setCustomerTicket(remainingTickets)
-        setResolved(remainingTickets);
+        setCustomerTicket(remainingTickets);
+        setResolved(resolved + 1)
         toast.success('Task Resolved!', {
             position: "top-right",
             autoClose: 5000,
@@ -50,7 +51,10 @@ function App() {
   return (
     <>
       <div>
+        {/* Navbar */}
             <Navbar></Navbar>
+
+        {/* Main */}
             <div className="bg-[#F5F5F5]">
                 <Banner customerTicket={customerTicket} resolved={resolved}></Banner>
                 <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
@@ -60,6 +64,9 @@ function App() {
                     <Tasks customerTicket={customerTicket} setCustomerTicket={setCustomerTicket} handleRemoveTask={handleRemoveTask}></Tasks>
                 </div>
             </div>
+
+        {/* Footer */}
+            <Footer></Footer>
       </div>
 
 
