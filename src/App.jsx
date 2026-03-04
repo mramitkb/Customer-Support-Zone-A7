@@ -13,18 +13,27 @@ import Footer from "./components/Footer/Footer"
 // const ticketsPromise = fetchPromise();
 
 function App() {
-    // const initialTickets = use(ticketsPromise); // to store allTickets in a state
+    // to store allTickets in a state with "use" Hook
+    // const initialTickets = use(ticketsPromise);
     // const [allTickets, setAllTickets] = useState(initialTickets);
-    
+
     const [allTickets, setAllTickets] = useState([]);
     const [customerTicket, setCustomerTicket] = useState([]);
     const [resolvedTask, setResolvedTask] = useState([]);
 
     // useEffect
     useEffect(() => {
-        fetch("/tickets.json")
-        .then(res => res.json())
-        .then(data => setAllTickets(data))
+        // fetch("/tickets.json")
+        // .then(res => res.json())
+        // .then(data => setAllTickets(data))
+
+        // Asynchronous Promise
+        const fetchAPI = async() => {
+            const res = await fetch("/tickets.json");
+            const data = await res.json();
+            setAllTickets(data);
+        };
+        fetchAPI();
     }, [])
 
     const handleCustomerTicket = (ticket) => {
