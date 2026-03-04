@@ -7,10 +7,10 @@ import gImg from "../../assets/m.png"
 
 const Footer = () => {
   return (
-    <div className="bg-black">
-      <div className="w-11/12 mx-auto py-20 flex justify-between gap-10">
-        <div className="space-y-3 flex-2">
-          <a className="font-bold text-2xl text-center md:text-start w-full flex items-center gap-2">
+    <div className="bg-black py-20">
+      <div className="w-11/12 mx-auto  flex flex-col md:flex-row justify-between gap-10">
+        <div className="space-y-3 flex-2 text-justify">
+          <a className="font-bold text-2xl text-center justify-center md:justify-start md:text-start w-full flex items-center gap-2">
             <img className="w-8" src={csLogo} alt="" />
             <p className="text-white">CS — Ticket System</p>
           </a>
@@ -61,6 +61,10 @@ const Footer = () => {
                 <p>support@csz.com</p>
             </div>
         </div>
+      </div>
+      <hr className="w-11/12 mx-auto border-gray-800 my-10" />
+      <div className="text-center">
+            <small className="text-gray-400">&copy; 2026 CS — Ticket System. All Rights Reserved.</small>
       </div>
     </div>
   );
