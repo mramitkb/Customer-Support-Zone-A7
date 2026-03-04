@@ -106,5 +106,31 @@
     "priority": "HIGH PRIORITY",
     "status": "Open",
     "createdAt": "14/09/2025"
-  }
+  },{
+  "id": 13,
+  "title": "Unable to change seat",
+  "description": "I want to change my seat selection but the system does not allow any modifications.",
+  "customer": "Liam Johnson",
+  "priority": "LOW PRIORITY",
+  "status": "Open",
+  "createdAt": "26/09/2025"
+},
+{
+  "id": 14,
+  "title": "QR code not scanning",
+  "description": "The QR code on my ticket is not scanning at the event entry gate.",
+  "customer": "Chen Wei",
+  "priority": "HIGH PRIORITY",
+  "status": "In-Progress",
+  "createdAt": "24/09/2025"
+},
+{
+  "id": 15,
+  "title": "Account verification email not received",
+  "description": "I signed up for a new account but did not receive the verification email.",
+  "customer": "Sara Ahmed",
+  "priority": "MEDIUM PRIORITY",
+  "status": "Open",
+  "createdAt": "27/09/2025"
+}
 ]

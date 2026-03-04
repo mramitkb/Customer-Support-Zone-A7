@@ -1,19 +1,19 @@
 import React from 'react';
-import vector1 from "../../../assets/vector1.png"
+import vector1 from "../../assets/vector1.png"
 
-const Banner = () => {
+const Banner = ({customerTicket, resolved}) => {
     return (
-        <div className='flex flex-col md:flex-row items-center justify-between gap-5 w-11/12 mx-auto my-16'>
+        <div className='flex flex-col md:flex-row items-center justify-between gap-5 w-11/12 mx-auto my-12 md:my-16'>
             <div className='relative flex-1 w-full text-center space-y-2 py-16 text-white rounded-xl bg-linear-to-r from-[#6530E4] to-[#9C5FF1]'>
                 <img className='absolute top-0 left-0' src={vector1} alt="" />
                 <p className='font-medium text-lg'>In-Progress</p>
-                <p className='font-bold text-4xl'>0</p>
+                <p className='font-bold text-4xl'>{customerTicket.length}</p>
                 <img className='absolute top-0 right-0 transform scale-x-[-1]' src={vector1} alt="" />
             </div>
             <div className='relative flex-1 w-full text-center space-y-2 py-16 text-white rounded-xl bg-linear-to-r from-[#54CF68] to-[#00827A]'>
                 <img className='absolute top-0 left-0' src={vector1} alt="" />
                 <p className='font-medium text-lg'>Resolved</p>
-                <p className='font-bold text-4xl'>0</p>
+                <p className='font-bold text-4xl'>{resolved.length}</p>
                 <img className='absolute top-0 right-0 transform scale-x-[-1]' src={vector1} alt="" />
             </div>
         </div>
