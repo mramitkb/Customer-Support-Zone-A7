@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "Payment not processed",
+    "description": "I tried purchasing a ticket but the payment failed even though money was deducted from my account.",
+    "customer": "John Doe",
+    "priority": "HIGH PRIORITY",
+    "status": "Open",
+    "createdAt": "03/09/2025"
+  },
+  {
+    "id": 2,
+    "title": "Unable to download ticket",
+    "description": "After successful payment, I cannot download my ticket from the dashboard.",
+    "customer": "Maria Gonzalez",
+    "priority": "MEDIUM PRIORITY",
+    "status": "In-Progress",
+    "createdAt": "07/09/2025"
+  },
+  {
+    "id": 3,
+    "title": "Wrong event date",
+    "description": "The event date on my ticket is incorrect compared to the event page.",
+    "customer": "Ali Khan",
+    "priority": "HIGH PRIORITY",
+    "status": "Open",
+    "createdAt": "12/09/2025"
+  },
+  {
+    "id": 4,
+    "title": "Refund not received",
+    "description": "I canceled my ticket last week but haven’t received the refund yet.",
+    "customer": "Emily Smith",
+    "priority": "HIGH PRIORITY",
+    "status": "In-Progress",
+    "createdAt": "20/09/2025"
+  },
+  {
+    "id": 5,
+    "title": "Login issue",
+    "description": "I can’t log in to my account after resetting my password.",
+    "customer": "David Miller",
+    "priority": "MEDIUM PRIORITY",
+    "status": "In-Progress",
+    "createdAt": "09/09/2025"
+  },
+  {
+    "id": 6,
+    "title": "Multiple charges",
+    "description": "I was charged twice for the same ticket purchase.",
+    "customer": "Sophia Brown",
+    "priority": "HIGH PRIORITY",
+    "status": "In-Progress",
+    "createdAt": "15/09/2025"
+  },
+  {
+    "id": 7,
+    "title": "Invalid promo code",
+    "description": "The discount code shown on your site is not working.",
+    "customer": "Michael Lee",
+    "priority": "LOW PRIORITY",
+    "status": "Open",
+    "createdAt": "05/09/2025"
+  },
+  {
+    "id": 8,
+    "title": "Ticket not received by email",
+    "description": "I purchased a ticket but haven’t received the confirmation email.",
+    "customer": "Olivia Wilson",
+    "priority": "MEDIUM PRIORITY",
+    "status": "In-Progress",
+    "createdAt": "22/09/2025"
+  },
+  {
+    "id": 9,
+    "title": "Event canceled but no update",
+    "description": "The event organizer announced cancellation but I have no update on refunds.",
+    "customer": "Hiroshi Tanaka",
+    "priority": "HIGH PRIORITY",
+    "status": "In-Progress",
+    "createdAt": "18/09/2025"
+  },
+  {
+    "id": 10,
+    "title": "Ticket transfer issue",
+    "description": "I tried transferring my ticket to a friend but the system gives an error.",
+    "customer": "Anna Müller",
+    "priority": "MEDIUM PRIORITY",
+    "status": "In-Progress",
+    "createdAt": "11/09/2025"
+  },
+  {
+    "id": 11,
+    "title": "Seats not assigned",
+    "description": "I bought two tickets but the seats were not assigned properly.",
+    "customer": "Carlos Rivera",
+    "priority": "MEDIUM PRIORITY",
+    "status": "Open",
+    "createdAt": "25/09/2025"
+  },
+  {
+    "id": 12,
+    "title": "Website crash during booking",
+    "description": "The site crashed while booking, and I am unsure if my payment went through.",
+    "customer": "Fatima Zahra",
+    "priority": "HIGH PRIORITY",
+    "status": "Open",
+    "createdAt": "14/09/2025"
+  }
+]
