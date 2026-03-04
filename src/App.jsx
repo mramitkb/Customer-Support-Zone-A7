@@ -3,18 +3,29 @@ import Navbar from "./components/Navbar/Navbar"
 import Banner from "./components/Banner/Banner"
 import Tickets from "./components/CustomerTickets/Tickets"
 import Tasks from "./components/Task/Tasks"
-import { Suspense, useState } from "react"
+import { Suspense, useEffect, useState } from "react"
 import Footer from "./components/Footer/Footer"
 
-const fetchPromise = async() => {
-    const res = await fetch("/tickets.json");
-    return res.json();
-}
-const ticketsPromise = fetchPromise();
+// const fetchPromise = async() => {
+//     const res = await fetch("/tickets.json");
+//     return res.json();
+// }
+// const ticketsPromise = fetchPromise();
 
 function App() {
+    // const initialTickets = use(ticketsPromise); // to store allTickets in a state
+    // const [allTickets, setAllTickets] = useState(initialTickets);
+    
+    const [allTickets, setAllTickets] = useState([]);
     const [customerTicket, setCustomerTicket] = useState([]);
     const [resolvedTask, setResolvedTask] = useState([]);
+
+    // useEffect
+    useEffect(() => {
+        fetch("/tickets.json")
+        .then(res => res.json())
+        .then(data => setAllTickets(data))
+    }, [])
 
     const handleCustomerTicket = (ticket) => {
         toast.info('Ticket added!', {
@@ -33,8 +44,9 @@ function App() {
     }
 
     const handleRemoveTask = (taskTicket) => {
-        const remainingTickets = customerTicket.filter(task => task.id !== taskTicket.id);
-        setCustomerTicket(remainingTickets);
+        const remainingTasks = customerTicket.filter(task => task.id !== taskTicket.id);
+        setCustomerTicket(remainingTasks);
+        removeFromTickets(taskTicket.id)
         setResolvedTask([...resolvedTask, taskTicket]);
         toast.success('Task Resolved!', {
             position: "top-right",
@@ -48,6 +60,11 @@ function App() {
             transition: Bounce,
         });
     }
+
+    const removeFromTickets = (id) => {
+        const remainingTickets = allTickets.filter(tickets => tickets.id !== id);
+        setAllTickets(remainingTickets);
+    }
   return (
     <>
       <div>
@@ -58,10 +75,13 @@ function App() {
             <div className="bg-[#F5F5F5] pb-16">
                 <Banner customerTicket={customerTicket} resolvedTask={resolvedTask}></Banner>
                 <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
-                    <Suspense fallback={<p className="font-bold text-3xl">Loading...</p>}>
-                        <Tickets ticketsPromise={ticketsPromise}  handleCustomerTicket={handleCustomerTicket}></Tickets>
+                    <Suspense fallback={<p className="font-bold text-xl md:text-3xl text-center md:h-200 md:w-200 ">Loading...</p>}>
+                        {/* Customer Tickets */}
+                        <Tickets allTickets={allTickets}  handleCustomerTicket={handleCustomerTicket}></Tickets>
+                        
+                        {/* Tasks Status */}
+                        <Tasks customerTicket={customerTicket} setCustomerTicket={setCustomerTicket} handleRemoveTask={handleRemoveTask} resolvedTask={resolvedTask}></Tasks>
                     </Suspense>
-                    <Tasks customerTicket={customerTicket} setCustomerTicket={setCustomerTicket} handleRemoveTask={handleRemoveTask} resolvedTask={resolvedTask}></Tasks>
                 </div>
             </div>
 
@@ -70,7 +90,7 @@ function App() {
       </div>
 
 
-      <ToastContainer></ToastContainer>
+      <ToastContainer position="top-right" toastClassName="!w-[200px] "></ToastContainer>
     </>
   )
 }
