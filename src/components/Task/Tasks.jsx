@@ -5,7 +5,7 @@ import ResolveCard from './ResolveCard';
 const Tasks = ({customerTicket, setCustomerTicket, handleRemoveTask, resolvedTask}) => {
     
     return (
-        <div className='col-span-3'>
+        <div className='col-span-9 md:col-span-3'>
             <div>
                 <h1 className='font-semibold text-xl'>Task Status</h1>
             <div className='mt-6'>
