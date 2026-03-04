@@ -30,22 +30,22 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a href="home">Home</a>
+                <a href="/">Home</a>
               </li>
               <li>
-                <a href="faq">FAQ</a>
+                <a href="/">FAQ</a>
               </li>
               <li>
-                <a href="changelog">Changelog</a>
+                <a href="/">Changelog</a>
               </li>
               <li>
-                <a href="blog">Blog</a>
+                <a href="/">Blog</a>
               </li>
               <li>
-                <a href="download">Download</a>
+                <a href="/">Download</a>
               </li>
               <li>
-                <a href="contact">Contact</a>
+                <a href="/">Contact</a>
               </li>
             </ul>
           </div>
@@ -57,22 +57,22 @@ const Navbar = () => {
         <div className="navbar-end hidden lg:flex flex-1">
           <ul className="flex items-center gap-3 font-medium space-x-0 mr-5">
             <li>
-              <a href="home">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="faq">FAQ</a>
+              <a href="/">FAQ</a>
             </li>
             <li>
-              <a href="changelog">Changelog</a>
+              <a href="/">Changelog</a>
             </li>
             <li>
-              <a href="blog">Blog</a>
+              <a href="/">Blog</a>
             </li>
             <li>
-              <a href="download">Download</a>
+              <a href="/">Download</a>
             </li>
             <li>
-              <a href="contact">Contact</a>
+              <a href="/">Contact</a>
             </li>
           </ul>
         </div>
