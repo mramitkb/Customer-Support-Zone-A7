@@ -14,7 +14,7 @@ const ticketsPromise = fetchPromise();
 
 function App() {
     const [customerTicket, setCustomerTicket] = useState([]);
-    const [resolved, setResolved] = useState(0)
+    const [resolvedTask, setResolvedTask] = useState([]);
 
     const handleCustomerTicket = (ticket) => {
         toast.info('Ticket added!', {
@@ -35,7 +35,7 @@ function App() {
     const handleRemoveTask = (taskTicket) => {
         const remainingTickets = customerTicket.filter(task => task.id !== taskTicket.id);
         setCustomerTicket(remainingTickets);
-        setResolved(resolved + 1)
+        setResolvedTask([...resolvedTask, taskTicket]);
         toast.success('Task Resolved!', {
             position: "top-right",
             autoClose: 5000,
@@ -55,13 +55,13 @@ function App() {
             <Navbar></Navbar>
 
         {/* Main */}
-            <div className="bg-[#F5F5F5]">
-                <Banner customerTicket={customerTicket} resolved={resolved}></Banner>
+            <div className="bg-[#F5F5F5] pb-16">
+                <Banner customerTicket={customerTicket} resolvedTask={resolvedTask}></Banner>
                 <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
                     <Suspense fallback={<p className="font-bold text-3xl">Loading...</p>}>
                         <Tickets ticketsPromise={ticketsPromise}  handleCustomerTicket={handleCustomerTicket}></Tickets>
                     </Suspense>
-                    <Tasks customerTicket={customerTicket} setCustomerTicket={setCustomerTicket} handleRemoveTask={handleRemoveTask}></Tasks>
+                    <Tasks customerTicket={customerTicket} setCustomerTicket={setCustomerTicket} handleRemoveTask={handleRemoveTask} resolvedTask={resolvedTask}></Tasks>
                 </div>
             </div>
 

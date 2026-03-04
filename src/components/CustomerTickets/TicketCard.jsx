@@ -5,7 +5,6 @@ import { LuCalendar } from 'react-icons/lu';
 const TicketCard = ({ticket, handleCustomerTicket}) => {
 
     const {id, title, description, customer, priority, createdAt, status} = ticket;
-    console.log(status);
     return (
         <div onClick={() => handleCustomerTicket(ticket)} className='cursor-pointer transition-transform duration-700 hover:scale-103 rounded-xl p-5 py-10 bg-white shadow-xl space-y-3'>
             <div className='flex items-center justify-between'>
