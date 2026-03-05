@@ -5,6 +5,7 @@ import Tickets from "./components/CustomerTickets/Tickets"
 import Tasks from "./components/Task/Tasks"
 import { Suspense, useEffect, useState } from "react"
 import Footer from "./components/Footer/Footer"
+import Loading from "./components/Loading"
 
 // const fetchPromise = async() => {
 //     const res = await fetch("/tickets.json");
@@ -20,6 +21,7 @@ function App() {
     const [allTickets, setAllTickets] = useState([]);
     const [customerTicket, setCustomerTicket] = useState([]);
     const [resolvedTask, setResolvedTask] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     // useEffect
     useEffect(() => {
@@ -32,6 +34,7 @@ function App() {
             const res = await fetch("/tickets.json");
             const data = await res.json();
             setAllTickets(data);
+            setLoading(false);
         };
         fetchAPI();
     }, [])
@@ -84,13 +87,18 @@ function App() {
             <div className="bg-[#F5F5F5] pb-16">
                 <Banner customerTicket={customerTicket} resolvedTask={resolvedTask}></Banner>
                 <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
-                    <Suspense fallback={<p className="font-bold text-xl md:text-3xl text-center md:h-200 md:w-200 ">Loading...</p>}>
-                        {/* Customer Tickets */}
+                    {/* when useHook are working */}
+                    {/* <Suspense fallback={<p className="font-bold text-xl md:text-3xl text-center md:h-200 md:w-200 ">Loading...</p>}>
+                    </Suspense> */}
+                    {/* Customer Tickets */}
+                    {
+                        loading ? 
+                        <Loading></Loading>:
                         <Tickets allTickets={allTickets}  handleCustomerTicket={handleCustomerTicket}></Tickets>
-                        
-                        {/* Tasks Status */}
-                        <Tasks customerTicket={customerTicket} setCustomerTicket={setCustomerTicket} handleRemoveTask={handleRemoveTask} resolvedTask={resolvedTask}></Tasks>
-                    </Suspense>
+                    }
+                    
+                    {/* Tasks Status */}
+                    <Tasks customerTicket={customerTicket} setCustomerTicket={setCustomerTicket} handleRemoveTask={handleRemoveTask}resolvedTask={resolvedTask}></Tasks>
                 </div>
             </div>
 
